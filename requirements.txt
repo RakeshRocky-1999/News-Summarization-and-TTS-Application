@@ -21,3 +21,4 @@ textblob
 matplotlib
 seaborn
 tensorflow
+googletrans
