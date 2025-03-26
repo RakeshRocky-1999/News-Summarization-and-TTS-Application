@@ -1,0 +1,9 @@
+# Space Metadata
+---
+title: "News Analysis and TTS Application"
+emoji: "🔊"
+colorFrom: "blue"
+colorTo: "green"
+sdk: "docker"
+app_file: "Dockerfile"
+pinned: false
