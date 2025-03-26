@@ -1,41 +1,34 @@
 import requests
-import json
-import os
+from bs4 import BeautifulSoup
 
-# Define function to fetch news articles using NewsAPI
-def extract_news(company, api_key, num_articles=10):
-    url = f"https://newsapi.org/v2/everything?q={company}&apiKey={api_key}&pageSize={num_articles}"
-    response = requests.get(url)
-    
-    if response.status_code == 200:
+def extract_news(company_name):
+    """Extract news articles for a given company name."""
+    base_url = "https://newsapi.org/v2/everything"
+    api_key = "3a7d16eaa9d7489fae472b23492c9a6b"  
+
+    params = {
+        "q": company_name,
+        "apiKey": api_key,
+        "language": "en",
+        "sortBy": "relevancy"
+    }
+
+    try:
+        response = requests.get(base_url, params=params)
+        response.raise_for_status()
         data = response.json()
-        articles = []
-        for article in data["articles"]:
-            articles.append({
-                "Title": article["title"],
-                "Summary": article["description"],
-                "Link": article["url"]
-            })
-        
-        # Correctly set path to data directory
-        base_dir = os.path.dirname(os.path.abspath(__file__))
-        data_dir = os.path.join(base_dir, "../data")
-        
-        # Create data directory if it does not exist
-        os.makedirs(data_dir, exist_ok=True)
-        
-        # Save articles to a JSON file
-        output_file_path = os.path.join(data_dir, "news.json")
-        with open(output_file_path, "w", encoding="utf-8") as file:
-            json.dump({"Articles": articles}, file, ensure_ascii=False, indent=4)
-        
-        print(f"News articles saved to {output_file_path}")
-    else:
-        print(f"Error fetching news: {response.status_code}")
-        return []
 
-# Example usage
-if __name__ == "__main__":
-    API_KEY = "3a7d16eaa9d7489fae472b23492c9a6b"  # Replace with your NewsAPI key
-    company_name = "Tesla"  # Example company name
-    extract_news(company_name, API_KEY)
+        if "articles" not in data or not data["articles"]:
+            print("No articles found.")
+            return []
+
+        # Extract article titles and content
+        articles = []
+        for article in data["articles"][:5]:
+            articles.append(f"{article['title']}: {article['description']}")
+
+        return articles
+
+    except Exception as e:
+        print(f"Error fetching news: {e}")
+        return []
