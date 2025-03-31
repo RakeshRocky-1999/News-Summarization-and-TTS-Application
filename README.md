@@ -142,5 +142,14 @@ docker run -p 7860:7860 -p 8501:8501 text-summ-api
 - http://127.0.0.1:8501 - Streamlit UI (Docker)
 
 
+🎯 API Endpoints
+|Method	|Endpoint|	Description|
+|GET| /	|	Welcome message|
+|POST| summarize |	Summarize news and generate TTS|
+|GET	| data/output.mp3|	Retrieve generated TTS audio|
+|POST|	/comparative|	Perform sentiment analysis|
+|GET|	/docs	Access |FastAPI Swagger UI|
+
+
 
 
