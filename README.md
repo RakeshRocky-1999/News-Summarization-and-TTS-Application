@@ -21,6 +21,7 @@ The project consists of:
 
 ## 📂 Project Structure
 
+```
 C:\My Projects\text_summ_to_TTS
 ├── requirements.txt         # List of dependencies
 ├── Dockerfile               # Docker configuration for containerization
@@ -42,7 +43,7 @@ C:\My Projects\text_summ_to_TTS
 ├── Notebooks
 │   └── Test_extraction.py    # Testing and experimenting with article extraction
 └── .gitignore                # Ignore unnecessary files in Git
-
+```
 
 ## 🎯 Key Features
 
