@@ -6,6 +6,7 @@
 ![Docker](https://img.shields.io/badge/Docker-Enabled-lightblue)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
+![StreamlitWebapp-ezgif](https://github.com/user-attachments/assets/35f75765-4e42-487f-9788-4711a732ee28)
 
 ## 🌐 Live Deployment Links
 
