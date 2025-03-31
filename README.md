@@ -105,7 +105,18 @@ pip install -r requirements.txt
 ```
 ### 🚀 3. Run FastAPI Backend (Local Machine)
 ```bash
-uvicorn api:app --host 0.0.0.0 --port 8000
+# Create a virtual environment and activate it
+python3 -m TTS_venv env
+source env/bin/activate  # For Mac/Linux
+# or
+env\Scripts\activate  # For Windows
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run FastAPI
+uvicorn main:app --host 127.0.0.1 --port 8000 --reload
+
 ```
 ✅ API is now running on:
 
@@ -142,14 +153,92 @@ docker run -p 7860:7860 -p 8501:8501 text-summ-api
 - http://127.0.0.1:8501 - Streamlit UI (Docker)
 
 
-🎯 API Endpoints
-|Method	|Endpoint|	Description|
-|GET| /	|	Welcome message|
-|POST| summarize |	Summarize news and generate TTS|
-|GET	| data/output.mp3|	Retrieve generated TTS audio|
-|POST|	/comparative|	Perform sentiment analysis|
-|GET|	/docs	Access |FastAPI Swagger UI|
+## 🎯 API Endpoints Table
 
+| **Method** | **Endpoint**           | **Description**                                 |
+|------------|------------------------|-------------------------------------------------|
+| `POST`     | `/get-news/`            | Fetch news articles, analyze sentiment, and generate audio |
+| `GET`      | `/docs`                 | Access FastAPI Swagger UI                      |
+| `POST`     | `/generate-audio/`      | Generate Hindi TTS audio from summarized news  |
+| `GET`      | `/health`               | Check API health status                        |
 
+## 📚 Project Workflow
+Here’s a detailed breakdown of how the project works and potential future improvements:
 
+🔥 How the Project Works
+User Input:
 
+User provides a company name via the Streamlit frontend or directly through the FastAPI backend.
+
+Example Input:
+```
+{
+  "company": "tesla"
+}
+```
+**1.Scraping and Data Collection:**
+- `scraper.py` fetches the latest news articles related to the given company.
+- Data is cleaned and prepared for further analysis.
+
+**2.Text Summarization:**
+- `summarizer.py` generates concise summaries for each article.
+
+**3.Sentiment Analysis:**
+- `sentiment.py` evaluates the sentiment (positive, negative, or neutral) of each article.
+- Sentiments are categorized and stored for comparative analysis.
+
+**4.Comparative Sentiment Analysis:**
+- `comparative_analysis.py` compares sentiments across articles to identify discrepancies.
+- Insights such as sentiment distribution and topic overlap are highlighted.
+
+**5.Hindi Text-to-Speech (TTS):**
+- `hindi_tts.py` converts the summarized news into Hindi audio.
+- Audio is saved in output/hindi_tts_output.mp3 and is included in the API response.
+
+**6.FastAPI Backend:**
+- API endpoints allow for seamless communication between the backend and frontend.
+- Swagger documentation available at /docs.
+
+**7.Streamlit Frontend:**
+Users can enter a company name and get:
+- Article Summaries
+- Sentiment Analysis
+- Hindi Audio Summary
+
+## Sample Input for FastAPI
+```
+{
+  "company": "tesla"
+}
+
+```
+## Sample Output
+```
+{
+  "Company": "tesla",
+  "Articles": [
+    {
+      "Title": "Is Tesla cooked?",
+      "Summary": " Tesla stock plunged 15 percent on Monday...",
+      "Sentiment": "negative",
+      "Topics": ["General"]
+    },
+    ...
+  ],
+  "Comparative Sentiment Score": {
+    "Sentiment Distribution": {
+      "negative": 1,
+      "positive": 1,
+      "neutral": 3
+    },
+    "Coverage Differences": [...],
+    "Topic Overlap": {
+      "Common Topics": ["General"],
+      "Unique Topics": ["None"]
+    }
+  },
+  "Final Sentiment Analysis": "tesla’s latest news reflects a neutral sentiment.",
+  "Audio": "/output/hindi_tts_output_8418fbb1afe0422a8e36134ae74a0b58.mp3"
+}
+
+```
