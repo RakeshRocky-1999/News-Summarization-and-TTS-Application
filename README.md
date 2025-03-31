@@ -247,11 +247,17 @@ Example Input:
 **1.Enhanced NLP Models:** 
     - Improve summarization using transformer-based models like BART or T5.
     - Fine-tune sentiment models for domain-specific results.
+
 **2.Advanced Topic Modeling:** Incorporate topic modeling to cluster articles by topic before comparison.
+
 **3.Improved Audio Generation:** Upgrade to more realistic Hindi TTS models (e.g., Tacotron2 or VITS).
+
 **4.User Interface Enhancements:** Improve Streamlit UI with advanced visualization and better interactivity.
+
 **5.Caching for Faster Results:** Implement Redis or similar caching for repeated API calls.
+
 **6.Multilingual Support:** Extend TTS to support multiple languages beyond Hindi.
+
 **7.Docker Optimization:** Reduce image size and optimize for faster deployment.
 
 ## 🎯 Potential Use Cases
