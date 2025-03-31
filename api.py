@@ -302,4 +302,3 @@ def process_request(data: RequestData):
 def read_root():
     """Health check endpoint."""
     return {"message": "API is running successfully!"}
-
