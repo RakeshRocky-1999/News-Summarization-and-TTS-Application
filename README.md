@@ -93,6 +93,40 @@ C:\My Projects\text_summ_to_TTS
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/text_summ_to_TTS.git
+git remote add origin https://github.com/RakeshRocky-1999/News-Summarization-and-TTS-Application.git
+```
+
+## 2. Install Dependencies
+```bash
+# Using pip
+pip install -r requirements.txt
+```
+## 3. Run FastAPI Backend
+```bash
+uvicorn api:app --host 0.0.0.0 --port 7860 --workers 4
+```
+✅ API is now running on http://localhost:7860/docs.
+
+## 4. Run Streamlit Frontend
+```bash
+streamlit run app.py
+```
+✅ Streamlit app is available at http://localhost:8501.
+
+## 5. Run Combined FastAPI and Streamlit Application (Local Only)
+```bash
+python FastAPI_Streamlit.py
+```
+✅ Access both services in one interface locally.
+
+## 🚢 Docker Deployment
+1. Build Docker Image
+```bash
+docker build -t text-summ-api .
+```
+2. Run Docker Container
+```bash
+docker run -p 7860:7860 -p 8501:8501 text-summ-api
+```
 
 
