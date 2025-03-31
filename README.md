@@ -6,6 +6,14 @@
 ![Docker](https://img.shields.io/badge/Docker-Enabled-lightblue)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
+
+## 🌐 Live Deployment Links
+
+| Platform      | URL                                                                 |
+|---------------|---------------------------------------------------------------------|
+| 🚀 **FastAPI** | [FastAPI Endpoint](https://rakeshrocky-1999-fast-api-tts.hf.space/docs) |
+| 🎨 **Streamlit** | [Streamlit Interface](https://rakeshrocky-1999-text-sum-to-tts-hindi.hf.space/) |
+
 ## 🚀 Overview
 This project leverages **Natural Language Processing (NLP)** and **Machine Learning (ML)** techniques to:
 - Extract and **summarize news articles**.
@@ -61,12 +69,6 @@ C:\My Projects\text_summ_to_TTS
 
 ---
 
-## 🌐 Live Deployment
-
-| Platform      | URL                                                                 |
-|---------------|---------------------------------------------------------------------|
-| 🚀 **FastAPI** | [FastAPI Endpoint](https://rakeshrocky-1999-fast-api-tts.hf.space/) |
-| 🎨 **Streamlit** | [Streamlit Interface](https://rakeshrocky-1999-text-sum-to-tts-hindi.hf.space/) |
 
 ---
 
@@ -91,35 +93,42 @@ C:\My Projects\text_summ_to_TTS
 
 ## ⚡ Installation and Usage
 
-### 1. Clone the Repository
+### 📥 1. Clone the Repository
 ```bash
 git remote add origin https://github.com/RakeshRocky-1999/News-Summarization-and-TTS-Application.git
 ```
 
-## 2. Install Dependencies
+### 🐍 2. Install Dependencies
 ```bash
 # Using pip
 pip install -r requirements.txt
 ```
-## 3. Run FastAPI Backend
+### 🚀 3. Run FastAPI Backend (Local Machine)
 ```bash
-uvicorn api:app --host 0.0.0.0 --port 7860 --workers 4
+uvicorn api:app --host 0.0.0.0 --port 8000
 ```
-✅ API is now running on http://localhost:7860/docs.
+✅ API is now running on:
 
-## 4. Run Streamlit Frontend
+- http://127.0.0.1:8000/docs - API Documentation
+- http://127.0.0.1:8000 - API Homepage
+
+### 🎨 4. Run Streamlit Frontend (Local Machine)
 ```bash
 streamlit run app.py
 ```
-✅ Streamlit app is available at http://localhost:8501.
+✅ Streamlit app is available at 
+- http://localhost:8501.
+- http://127.0.0.1:8501 - Streamlit Frontend Interface
 
-## 5. Run Combined FastAPI and Streamlit Application (Local Only)
+### 5. Run Combined FastAPI and Streamlit Application (Local Only)
 ```bash
 python FastAPI_Streamlit.py
 ```
-✅ Access both services in one interface locally.
+✅ Combined interface is accessible locally at:
+- http://127.0.0.1:8000/docs - FastAPI
+- http://127.0.0.1:8501 - Streamlit UI
 
-## 🚢 Docker Deployment
+### 🚢 Docker Deployment
 1. Build Docker Image
 ```bash
 docker build -t text-summ-api .
@@ -128,5 +137,10 @@ docker build -t text-summ-api .
 ```bash
 docker run -p 7860:7860 -p 8501:8501 text-summ-api
 ```
+✅ Access the following services:
+- http://127.0.0.1:7860/docs - FastAPI Docs (Docker)
+- http://127.0.0.1:8501 - Streamlit UI (Docker)
+
+
 
 
