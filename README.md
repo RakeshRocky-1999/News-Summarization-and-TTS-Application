@@ -47,9 +47,9 @@ C:\My Projects\text_summ_to_TTS
 
 ## 🎯 Key Features
 
-✅ **`Text Summarization:`** Summarizes news articles using NLP models.
-✅ Comparative Analysis: Analyzes the sentiment of multiple articles and generates insights.
-✅ Hindi Text-to-Speech (TTS): Converts summarized text into Hindi audio using gtts.
-✅ RESTful API with FastAPI: Handles incoming requests and manages backend processes.
-✅ Streamlit Frontend: Provides an intuitive and interactive UI for users.
-✅ Docker Support: Easily deployable using Docker with optimized performance.
+-- ✅ **Text Summarization:** Summarizes news articles using NLP models.
+-- ✅ **Comparative Analysis:** Analyzes the sentiment of multiple articles and generates insights.
+-- ✅ **Hindi Text-to-Speech (TTS):** Converts summarized text into Hindi audio using gtts.
+-- ✅ **RESTful API with FastAPI:** Handles incoming requests and manages backend processes.
+-- ✅ **Streamlit Frontend:** Provides an intuitive and interactive UI for users.
+-- ✅ **Docker Support:** Easily deployable using Docker with optimized performance.
