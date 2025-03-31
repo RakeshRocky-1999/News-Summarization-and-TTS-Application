@@ -61,3 +61,56 @@ C:\My Projects\text_summ_to_TTS
 
 ## `Streamlit Web Application:`
 🎨 Streamlit Interface
+
+
+
+---
+
+## 🎯 Key Features
+
+| Feature                  | Description                                                                 |
+|--------------------------|-----------------------------------------------------------------------------|
+| ✅ Text Summarization     | Summarizes news articles using NLP models.                                |
+| ✅ Comparative Analysis   | Analyzes sentiment of multiple articles and generates insights.            |
+| ✅ Hindi Text-to-Speech   | Converts summarized text into Hindi audio using `gtts`.                   |
+| ✅ RESTful API with FastAPI | Handles incoming requests and processes text.                             |
+| ✅ Streamlit Frontend     | Provides an intuitive and interactive UI for users.                       |
+| ✅ Docker Support         | Easily deployable using Docker with optimized performance.                  |
+
+---
+
+## 🌐 Live Deployment
+
+| Platform      | URL                                                                 |
+|---------------|---------------------------------------------------------------------|
+| 🚀 **FastAPI** | [FastAPI Endpoint](https://rakeshrocky-1999-fast-api-tts.hf.space/) |
+| 🎨 **Streamlit** | [Streamlit Interface](https://rakeshrocky-1999-text-sum-to-tts-hindi.hf.space/) |
+
+---
+
+## 🛠️ Technologies Used
+
+| Technology      | Purpose                        |
+|-----------------|--------------------------------|
+| Python 3.11      | Core programming language      |
+| FastAPI          | Backend API for text processing |
+| Streamlit        | Frontend for interactive UI    |
+| Docker           | Containerization and deployment |
+| Googletrans      | Translation of text            |
+| gTTS             | Text-to-Speech conversion      |
+| Hugging Face API | Model hosting and deployment   |
+| BeautifulSoup4   | Web scraping                   |
+| NLTK & TextBlob  | Natural Language Processing    |
+| Pandas           | Data manipulation              |
+| Matplotlib/Seaborn | Data visualization           |
+| PyTorch          | Machine Learning backend       |
+
+---
+
+## ⚡ Installation and Usage
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/your-username/text_summ_to_TTS.git
+cd text_summ_to_TTS
+
