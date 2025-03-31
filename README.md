@@ -245,8 +245,8 @@ Example Input:
 
 ## 🚀 Future Improvements
 **1.Enhanced NLP Models:** 
-    - Improve summarization using transformer-based models like BART or T5.
-    - Fine-tune sentiment models for domain-specific results.
+- Improve summarization using transformer-based models like BART or T5.
+- Fine-tune sentiment models for domain-specific results.
 
 **2.Advanced Topic Modeling:** Incorporate topic modeling to cluster articles by topic before comparison.
 
